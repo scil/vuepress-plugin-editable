@@ -8,13 +8,13 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs"
   },
-  "homepage": "https://github.com/scil/vuepress-plugin-editable",
+  "homepage": "https://github.com/scil/vuepress-plugin-editable2",
   "bugs": {
-    "url": "https://github.com/scil/vuepress-plugin-editable/issues"
+    "url": "https://github.com/scil/vuepress-plugin-editable/issues2"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/scil/vuepress-plugin-editable.git"
+    "url": "git+https://github.com/scil/vuepress-plugin-editable2.git"
   },
   "publishConfig": {
     "access": "public"
