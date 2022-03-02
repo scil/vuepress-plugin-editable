@@ -10,7 +10,7 @@ npm install -D vuepress-plugin-editable2
 - 主要借鉴 vuepress-theme-hope\packages\copy-code2 等。
   - 编译工具 rollup
     - wsl下运行 rollup 不然
-    - rollup.config.js 不确定是否配置好了
+    - [rollup.config.js](https://github.com/scil/vuepress-plugin-editable2/blob/main/rollup.config.js) 不确定是否配置好了
   - 代码中注释中的 from 代表借鉴来源。
 
 使用时有这两个错误，还不能工作 
