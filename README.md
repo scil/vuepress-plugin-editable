@@ -1,5 +1,9 @@
 # vuepress-plugin-editable2
 
+```
+npm install -D vuepress-plugin-editable2
+```
+
 开发思路
 - 在原库基础上，进行兼容 vuepress2.0 的改造。 https://v2.vuepress.vuejs.org/reference/plugin-api.html#overview
   - 使用 mitt 作为 event bus
