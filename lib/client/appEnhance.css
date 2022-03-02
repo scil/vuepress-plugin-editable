@@ -1,0 +1,142 @@
+.editable-review {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.editable-loading {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  background: #282c34ba;
+}
+
+.editable-loading p {
+  position: relative;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #2e4f48;
+  font-size: 24px;
+}
+
+.editable-storm-loading {
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.22);
+  transition: all 3s;
+}
+
+.editable-storm-loading:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border-top: 4px solid rgba(62, 175, 124, 0.85);
+  border-left: 4px solid rgba(62, 175, 124, 0.8);
+  border-right: 4px solid rgba(62, 175, 124, 0.75);
+  border-bottom: 4px solid rgba(62, 175, 124, 0.7);
+  border-radius: 100%;
+  margin-left: -30px;
+  -webkit-animation: storm-loading 1s linear infinite;
+  -o-animation: storm-loading 1s linear infinite;
+  animation: storm-loading 1s linear infinite;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+}
+
+.editable-storm-loading:after {
+  position: relative;
+  content: "Loading...";
+  color: #3eaf7c;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  padding-left: 10px;
+  font-size: 16px;
+}
+
+/*animation*/
+@keyframes storm-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes storm-loading {
+  0% {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+.close-poptip {
+  position: relative;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3eaf7c;
+  color: #3eaf7c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.editable-poptip {
+  position: fixed;
+  border: 1px solid #3eaf7c;
+  box-sizing: border-box;
+  background: #fff;
+  width: 360px;
+  bottom: 40px;
+  right: 40px;
+  padding: 20px;
+  z-index: 3;
+}
+
+.editable-poptip code {
+  color: #476582;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+.editable-lines {
+  background-color: #fff;
+  padding: 88px 0 0 15px;
+}
+
+.editable-lines > span {
+  display: block;
+  height: 18px;
+}

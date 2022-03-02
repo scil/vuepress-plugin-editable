@@ -1,29 +1,3 @@
-<!--
- @design by @veaba
- -->
-<template>
-  <div class="editable-loading" v-if="loading">
-    <div class="editable-storm-loading"></div>
-  </div>
-</template>
-<script>
-import bus from "../eventBus";
-export default {
-  name: "EditableLoading",
-  data() {
-    return {
-      loading: false,
-    };
-  },
-  mounted() {
-    bus.$on("showLoading", (status) => {
-      this.loading = status;
-    });
-  },
-};
-</script>
-
-<style scoped>
 .editable-loading {
   position: fixed;
   left: 50%;
@@ -33,6 +7,7 @@ export default {
   height: 100%;
   background: #282c34ba;
 }
+
 .editable-loading p {
   position: relative;
   left: 50%;
@@ -73,10 +48,11 @@ export default {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
 }
+
 .editable-storm-loading:after {
   position: relative;
   content: "Loading...";
-  color: rgb(62, 175, 124);
+  color: #3eaf7c;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -84,6 +60,7 @@ export default {
   padding-left: 10px;
   font-size: 16px;
 }
+
 /*animation*/
 @keyframes storm-loading {
   0% {
@@ -97,7 +74,6 @@ export default {
     transform: rotate(360deg);
   }
 }
-
 @-webkit-keyframes storm-loading {
   0% {
     -webkit-transform: rotate(0deg);
@@ -110,4 +86,57 @@ export default {
     transform: rotate(360deg);
   }
 }
-</style>
+.editable-review {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.close-poptip {
+  position: relative;
+  float: right;
+  width: 20px;
+  height: 20px;
+  border: 1px solid #3eaf7c;
+  color: #3eaf7c;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 15px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.editable-poptip {
+  position: fixed;
+  border: 1px solid #3eaf7c;
+  box-sizing: border-box;
+  background: #fff;
+  width: 360px;
+  bottom: 40px;
+  right: 40px;
+  padding: 20px;
+  z-index: 3;
+}
+
+.editable-poptip code {
+  color: #476582;
+  padding: 0.25rem 0.5rem;
+  margin: 0;
+  font-size: 0.85em;
+  background-color: rgba(27, 31, 35, 0.05);
+  border-radius: 3px;
+}
+
+.editable-lines {
+  background-color: #fff;
+  padding: 88px 0 0 15px;
+}
+
+.editable-lines > span {
+  display: block;
+  height: 18px;
+}

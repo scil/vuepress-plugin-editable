@@ -1,3 +1,73 @@
+# vuepress-plugin-editable2
+
+开发思路
+- 在原库基础上，进行兼容 vuepress2.0 的改造。 https://v2.vuepress.vuejs.org/reference/plugin-api.html#overview
+  - 使用 mitt 作为 event bus
+- 主要借鉴 vuepress-theme-hope\packages\copy-code2 等。
+  - 编译工具 rollup
+    - wsl下运行 rollup 不然
+    - rollup.config.js 不确定是否配置好了
+  - 代码中注释中的 from 代表借鉴来源。
+
+使用时有这两个错误，还不能工作 
+```
+routeLocale.js:12 Uncaught (in promise) Error: useRouteLocale() is called without provider.
+    at useRouteLocale (routeLocale.js:12:15)
+    at x (locales.ts:16:23)
+    at appSetup.ts:55:57
+    at setup (app.js:26:17)
+    at callWithErrorHandling (runtime-core.esm-bundler.js:155:22)
+    at setupStatefulComponent (runtime-core.esm-bundler.js:7056:29)
+    at setupComponent (runtime-core.esm-bundler.js:7012:11)
+    at mountComponent (runtime-core.esm-bundler.js:4922:13)
+    at processComponent (runtime-core.esm-bundler.js:4897:17)
+    at patch (runtime-core.esm-bundler.js:4489:21)
+useRouteLocale @ routeLocale.js:12
+x @ locales.ts:16
+(anonymous) @ appSetup.ts:55
+setup @ app.js:26
+callWithErrorHandling @ runtime-core.esm-bundler.js:155
+setupStatefulComponent @ runtime-core.esm-bundler.js:7056
+setupComponent @ runtime-core.esm-bundler.js:7012
+mountComponent @ runtime-core.esm-bundler.js:4922
+processComponent @ runtime-core.esm-bundler.js:4897
+patch @ runtime-core.esm-bundler.js:4489
+render2 @ runtime-core.esm-bundler.js:5641
+mount @ runtime-core.esm-bundler.js:3877
+app.mount @ runtime-dom.esm-bundler.js:1590
+(anonymous) @ app.js:62
+Promise.then (async)
+(anonymous) @ app.js:61
+Promise.then (async)
+(anonymous) @ app.js:60
+
+appSetup.ts:23 Uncaught (in promise) TypeError: Cannot read properties of undefined (reading 'query')
+    at Object.saveAccessToken (appSetup.ts:23:54)
+    at appSetup.ts:378:14
+    at callWithErrorHandling (runtime-core.esm-bundler.js:155:22)
+    at callWithAsyncErrorHandling (runtime-core.esm-bundler.js:164:21)
+    at Array.hook.__weh.hook.__weh (runtime-core.esm-bundler.js:2667:29)
+    at flushPostFlushCbs (runtime-core.esm-bundler.js:356:32)
+    at render2 (runtime-core.esm-bundler.js:5643:9)
+    at mount (runtime-core.esm-bundler.js:3877:25)
+    at Object.app.mount (runtime-dom.esm-bundler.js:1590:23)
+    at app.js:62:17
+saveAccessToken @ appSetup.ts:23
+(anonymous) @ appSetup.ts:378
+callWithErrorHandling @ runtime-core.esm-bundler.js:155
+callWithAsyncErrorHandling @ runtime-core.esm-bundler.js:164
+hook.__weh.hook.__weh @ runtime-core.esm-bundler.js:2667
+flushPostFlushCbs @ runtime-core.esm-bundler.js:356
+render2 @ runtime-core.esm-bundler.js:5643
+mount @ runtime-core.esm-bundler.js:3877
+app.mount @ runtime-dom.esm-bundler.js:1590
+(anonymous) @ app.js:62
+Promise.then (async)
+(anonymous) @ app.js:61
+Promise.then (async)
+(anonymous) @ app.js:60
+```
+
 # vuepress-plugin-editable
 
 <p align="center">

@@ -3,10 +3,18 @@
   "version": "1.0.13",
   "author": "veaba",
   "license": "MIT",
-  "main": "src/index.js",
+  "main": "lib/node/index.js",
+  "types": "lib/node/index.d.ts",
+  "files": [
+    "lib",
+    "src"
+  ],
   "scripts": {
-    "dev": "vuepress dev docs",
-    "build": "vuepress build docs"
+    "build": "rollup -c",
+    "clean": "rimraf ./lib ./*.tsbuildinfo",
+    "dev": "concurrently \"yarn dev:copy\" \"yarn dev:ts\"",
+    "dev:copy": "cpx src/client/**/*.{vue,scss} lib/client -w",
+    "dev:ts": "tsc -b tsconfig.build.json --watch"
   },
   "homepage": "https://github.com/scil/vuepress-plugin-editable2",
   "bugs": {
@@ -19,7 +27,40 @@
   "publishConfig": {
     "access": "public"
   },
+  "dependencies": {
+    "@mr-hope/vuepress-shared": "^2.0.0-alpha.38",
+    "@rollup/plugin-image": "^2.1.1",
+    "@vue/compiler-sfc": "^3.2.31",
+    "@vuepress/cli": "^2.0.0-beta.35",
+    "@vuepress/client": "^2.0.0-beta.35",
+    "@vuepress/utils": "^2.0.0-beta.35",
+    "add": "^2.0.6",
+    "balloon-css": "^1.2.0",
+    "mitt": "^3.0.0",
+    "rollup-plugin-css": "^1.0.10",
+    "rollup-plugin-scss": "^3.0.0",
+    "rollup-plugin-styles": "^4.0.0",
+    "vue": "^3.2.31",
+    "vue-router": "^4.0.12",
+    "vuepress-plugin-sass-palette": "^2.0.0-alpha.31",
+    "yarn": "^1.22.17"
+  },
   "devDependencies": {
-    "vuepress": "^1.8.2"
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.1.3",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@vuepress/core": "^2.0.0-beta.35",
+    "rollup": "^2.68.0",
+    "rollup-plugin-copy": "3.4.0",
+    "rollup-plugin-dts": "4.1.0",
+    "rollup-plugin-preserve-shebangs": "^0.2.0",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.31.2",
+    "rollup-plugin-vue": "^6.0.0",
+    "ts-node": "10.5.0",
+    "typescript": "4.5.5",
+    "vuepress-vite": "^2.0.0-beta.35",
+    "vuepress-webpack": "^2.0.0-beta.35"
   }
 }

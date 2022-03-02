@@ -1,5 +1,5 @@
 const _appDomain = "https://bot.veaba.me";
-module.exports = {
+export default {
 	_appDomain,
 	_clientId: "Iv1.f8c5b24e304d03c9",
 	_redirectAPI: "/api/redirect/github",

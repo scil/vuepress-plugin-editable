@@ -1,3 +1,4 @@
+// @ts-nocheck
 // markdown plugin
 module.exports = (md, ctx) => {
   function setLine({ tokens = [] }) {

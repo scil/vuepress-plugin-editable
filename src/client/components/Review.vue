@@ -45,9 +45,9 @@
 </template>
 
 <script>
-import bus from "../eventBus";
+import {bus} from "../../shared/eventBus";
 import { fetchOps } from "../fetchConfig";
-import Position from "./Position";
+import Position from "./Position.vue";
 
 export default {
   mounted() {
@@ -178,7 +178,7 @@ export default {
 };
 </script>
 
-<style lang="stylus" scoped>
+<style  scoped>
 .editable-review {
   position: fixed;
   left: 0;

@@ -32,7 +32,7 @@
   </div>
 </template>
 <script>
-import bus from "../eventBus";
+import {bus} from "../../shared/eventBus";
 export default {
   data() {
     return {
